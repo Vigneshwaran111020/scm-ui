@@ -1,5 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '';
 /**
  * Utility function to make API calls to the Spring Boot backend
  * @param {string} endpoint - The API endpoint (e.g., '/shipments')
@@ -7,7 +6,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080
  */
 export const apiFetch = async (endpoint, options = {}) => {
   const url = `${API_BASE_URL}${endpoint}`;
-  
+
   const defaultHeaders = {
     'Content-Type': 'application/json',
   };
@@ -25,10 +24,10 @@ export const apiFetch = async (endpoint, options = {}) => {
     if (!response.ok) {
       throw new Error(`API Error: ${response.status} ${response.statusText}`);
     }
-    
+
     // For 204 No Content or empty responses
     if (response.status === 204) return null;
-    
+
     const data = await response.json();
     return data;
   } catch (error) {
