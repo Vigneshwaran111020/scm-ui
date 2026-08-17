@@ -1,0 +1,110 @@
+{
+  "tableId": "skus",
+  "titleProps": [
+    {
+      "title": "",
+      "accessPath": "id",
+      "dataType": "Long",
+      "bodyType": "select",
+      "displayable": true
+    },
+    {
+      "title": "Product",
+      "accessPath": "productId",
+      "dataType": "Long",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "SKU Code",
+      "accessPath": "skuCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "UPC",
+      "accessPath": "upc",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "EAN",
+      "accessPath": "ean",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Pack Type",
+      "accessPath": "packType",
+      "dataType": "PackType",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Color",
+      "accessPath": "color",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Size",
+      "accessPath": "size",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Weight",
+      "accessPath": "weight",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Status",
+      "accessPath": "status",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Remarks",
+      "accessPath": "remarks",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created By",
+      "accessPath": "createdBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created Date",
+      "accessPath": "createdDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified By",
+      "accessPath": "modifiedBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified Date",
+      "accessPath": "modifiedDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "tableId": "products",
+  "titleProps": [
+    {
+      "title": "",
+      "accessPath": "id",
+      "dataType": "Long",
+      "bodyType": "select",
+      "displayable": true
+    },
+    {
+      "title": "Product Code",
+      "accessPath": "productCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Product Name",
+      "accessPath": "productName",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Short Description",
+      "accessPath": "shortDescription",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Long Description",
+      "accessPath": "longDescription",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Category",
+      "accessPath": "categoryId",
+      "dataType": "Long",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "UOM",
+      "accessPath": "uomId",
+      "dataType": "Long",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Barcode",
+      "accessPath": "barcode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Manufacturer",
+      "accessPath": "manufacturer",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Brand",
+      "accessPath": "brand",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Country Of Origin",
+      "accessPath": "countryOfOrigin",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Weight",
+      "accessPath": "weight",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Length",
+      "accessPath": "length",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Width",
+      "accessPath": "width",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Height",
+      "accessPath": "height",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Volume",
+      "accessPath": "volume",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Shelf Life Days",
+      "accessPath": "shelfLifeDays",
+      "dataType": "Integer",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Expiry Required",
+      "accessPath": "expiryRequired",
+      "dataType": "boolean",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Serial Tracking",
+      "accessPath": "serialTracking",
+      "dataType": "boolean",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Lot Tracking",
+      "accessPath": "lotTracking",
+      "dataType": "boolean",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Hazardous",
+      "accessPath": "hazardous",
+      "dataType": "boolean",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Temperature Type",
+      "accessPath": "temperatureType",
+      "dataType": "TemperatureType",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Image URL",
+      "accessPath": "imageUrl",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Status",
+      "accessPath": "status",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Remarks",
+      "accessPath": "remarks",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created By",
+      "accessPath": "createdBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created Date",
+      "accessPath": "createdDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified By",
+      "accessPath": "modifiedBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified Date",
+      "accessPath": "modifiedDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    }
+  ]
+}

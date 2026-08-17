@@ -43,37 +43,18 @@ export default function Drivers({ tabId }) {
     }
   };
 
-  const tableColumns = [
-    { header: 'ID', key: 'id' },
-    { header: 'Driver Number', key: 'driverNumber' },
-    { header: 'Driver Name', key: 'driverName' },
-    { header: 'License Number', key: 'licenseNumber' },
-    { header: 'Phone Number', key: 'phoneNumber' }
-  ];
+
 
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-        <h2 className="page-title" style={{ margin: 0 }}>
-          <Users className="text-primary" style={{ marginRight: '8px' }} /> Driver Master
-        </h2>
-        
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
-          <button className="btn-primary" onClick={handleAdd}>
-            <Plus size={16} /> Add
-          </button>
-          <button className="btn-secondary" onClick={handleRefresh}>
-            <RefreshCw size={16} /> Refresh
-          </button>
-        </div>
-      </div>
-
-      <CustomTableContainer 
-        columns={tableColumns} 
-        data={drivers} 
-        emptyMessage="No drivers found." 
-        onAction={handleAction}
-      />
-    </div>
+    <CustomTableContainer 
+      tableId="drivers" 
+      title="Driver Master"
+      icon={Users}
+      data={drivers} 
+      emptyMessage="No drivers found." 
+      onAction={handleAction}
+      onAdd={handleAdd}
+      onRefresh={handleRefresh}
+    />
   );
 }

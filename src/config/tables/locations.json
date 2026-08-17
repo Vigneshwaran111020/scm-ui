@@ -1,0 +1,264 @@
+{
+  "tableId": "locations",
+  "titleProps": [
+    {
+      "title": "",
+      "accessPath": "id",
+      "dataType": "Long",
+      "bodyType": "select",
+      "displayable": true
+    },
+    {
+      "title": "Location Code",
+      "accessPath": "locationCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Location Name",
+      "accessPath": "locationName",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Location Type",
+      "accessPath": "locationType",
+      "dataType": "String",
+      "bodyType": "badge",
+      "displayable": true
+    },
+    {
+      "title": "Location Sub Type",
+      "accessPath": "locationSubType",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Description",
+      "accessPath": "description",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Address Line 1",
+      "accessPath": "addressLine1",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Address Line 2",
+      "accessPath": "addressLine2",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Address Line 3",
+      "accessPath": "addressLine3",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "City",
+      "accessPath": "city",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "State",
+      "accessPath": "state",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "State Code",
+      "accessPath": "stateCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Country",
+      "accessPath": "country",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Country Code",
+      "accessPath": "countryCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Postal Code",
+      "accessPath": "postalCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "County",
+      "accessPath": "county",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Latitude",
+      "accessPath": "latitude",
+      "dataType": "BigDecimal",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Longitude",
+      "accessPath": "longitude",
+      "dataType": "BigDecimal",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Timezone",
+      "accessPath": "timezone",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Timezone Code",
+      "accessPath": "timezoneCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Contact Name",
+      "accessPath": "contactName",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Contact Phone",
+      "accessPath": "contactPhone",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Alternate Phone",
+      "accessPath": "alternatePhone",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Contact Email",
+      "accessPath": "contactEmail",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Fax Number",
+      "accessPath": "faxNumber",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Operating Hours",
+      "accessPath": "operatingHours",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Notes",
+      "accessPath": "notes",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Active",
+      "accessPath": "active",
+      "dataType": "Boolean",
+      "bodyType": "badge",
+      "displayable": true
+    },
+    {
+      "title": "Org ID",
+      "accessPath": "orgId",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "DC ID",
+      "accessPath": "dcId",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Status",
+      "accessPath": "status",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Remarks",
+      "accessPath": "remarks",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created By",
+      "accessPath": "createdBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created Date",
+      "accessPath": "createdDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified By",
+      "accessPath": "modifiedBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified Date",
+      "accessPath": "modifiedDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Deleted",
+      "accessPath": "deleted",
+      "dataType": "Boolean",
+      "bodyType": "text",
+      "displayable": false
+    }
+  ]
+}

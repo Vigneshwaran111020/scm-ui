@@ -1,0 +1,17 @@
+{
+  "tableId": "inventory",
+  "titleProps": [
+    { "title": "Inventory ID", "accessPath": "id", "dataType": "Long", "bodyType": "number", "displayable": true },
+    { "title": "Warehouse", "accessPath": "warehouseId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Bin", "accessPath": "binId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "SKU", "accessPath": "skuId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Product", "accessPath": "productId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Lot Number", "accessPath": "lotNumber", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "On Hand", "accessPath": "onHandQuantity", "dataType": "BigDecimal", "bodyType": "number", "displayable": true },
+    { "title": "Reserved", "accessPath": "reservedQuantity", "dataType": "BigDecimal", "bodyType": "number", "displayable": true },
+    { "title": "Allocated", "accessPath": "allocatedQuantity", "dataType": "BigDecimal", "bodyType": "number", "displayable": true },
+    { "title": "Available", "accessPath": "availableQuantity", "dataType": "BigDecimal", "bodyType": "number", "displayable": true },
+    { "title": "UOM", "accessPath": "uomId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Status", "accessPath": "inventoryStatus", "dataType": "String", "bodyType": "status", "displayable": true }
+  ]
+}

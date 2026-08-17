@@ -44,42 +44,18 @@ export default function Shipments({ tabId }) {
     }
   };
 
-  const tableColumns = [
-    { header: 'ID', key: 'id' },
-    { header: 'Shipment', key: 'shipmentNumber' },
-    { header: 'Customer', key: 'customerName' },
-    { header: 'Origin', key: 'origin' },
-    { header: 'Destination', key: 'destination' },
-    { 
-      header: 'Status', 
-      key: 'status',
-      render: (val, row) => <StatusChip status={row.id % 2 === 0 ? 'In Progress' : 'Completed'} />
-    }
-  ];
+
 
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-        <h2 className="page-title" style={{ margin: 0 }}>
-          <Package className="text-primary" style={{ marginRight: '8px' }} /> Supply Chain Management
-        </h2>
-        
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
-          <button className="btn-primary" onClick={handleAdd}>
-            <Plus size={16} /> Add
-          </button>
-          <button className="btn-secondary" onClick={handleRefresh}>
-            <RefreshCw size={16} /> Refresh
-          </button>
-        </div>
-      </div>
-
-      <CustomTableContainer 
-        columns={tableColumns} 
-        data={shipments} 
-        emptyMessage="No shipments found." 
-        onAction={handleAction}
-      />
-    </div>
+    <CustomTableContainer 
+      tableId="shipments" 
+      title="Supply Chain Management"
+      icon={Package}
+      data={shipments} 
+      emptyMessage="No shipments found." 
+      onAction={handleAction}
+      onAdd={handleAdd}
+      onRefresh={handleRefresh}
+    />
   );
 }

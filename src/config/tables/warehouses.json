@@ -1,0 +1,25 @@
+{
+  "tableId": "warehouses",
+  "titleProps": [
+    { "title": "", "accessPath": "id", "dataType": "Long", "bodyType": "select", "displayable": true },
+    { "title": "Warehouse Code", "accessPath": "warehouseCode", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Warehouse Name", "accessPath": "warehouseName", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Warehouse Type", "accessPath": "warehouseType", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Address 1", "accessPath": "address1", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Address 2", "accessPath": "address2", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "City", "accessPath": "city", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "State", "accessPath": "state", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Country", "accessPath": "country", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Postal Code", "accessPath": "postalCode", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Timezone", "accessPath": "timezone", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Contact Name", "accessPath": "contactName", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Contact Number", "accessPath": "contactNumber", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Email", "accessPath": "email", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Status", "accessPath": "status", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Remarks", "accessPath": "remarks", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Created By", "accessPath": "createdBy", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Created Date", "accessPath": "createdDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": false },
+    { "title": "Modified By", "accessPath": "modifiedBy", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Modified Date", "accessPath": "modifiedDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": false }
+  ]
+}

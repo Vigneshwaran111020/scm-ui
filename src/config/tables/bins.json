@@ -1,0 +1,145 @@
+{
+  "tableId": "bins",
+  "titleProps": [
+    {
+      "title": "",
+      "accessPath": "id",
+      "dataType": "Long",
+      "bodyType": "select",
+      "displayable": true
+    },
+    {
+      "title": "Warehouse",
+      "accessPath": "warehouseId",
+      "dataType": "Long",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Zone",
+      "accessPath": "zoneId",
+      "dataType": "Long",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Aisle",
+      "accessPath": "aisleId",
+      "dataType": "Long",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Rack",
+      "accessPath": "rackId",
+      "dataType": "Long",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Bin Code",
+      "accessPath": "binCode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Bin Type",
+      "accessPath": "binType",
+      "dataType": "BinType",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Capacity",
+      "accessPath": "capacity",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Capacity UOM",
+      "accessPath": "capacityUom",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Max Weight",
+      "accessPath": "maxWeight",
+      "dataType": "Double",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Occupied",
+      "accessPath": "occupied",
+      "dataType": "boolean",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Allow Mixed SKU",
+      "accessPath": "allowMixedSku",
+      "dataType": "boolean",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Allow Mixed Lot",
+      "accessPath": "allowMixedLot",
+      "dataType": "boolean",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Barcode",
+      "accessPath": "barcode",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Status",
+      "accessPath": "status",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Remarks",
+      "accessPath": "remarks",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created By",
+      "accessPath": "createdBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Created Date",
+      "accessPath": "createdDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified By",
+      "accessPath": "modifiedBy",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": false
+    },
+    {
+      "title": "Modified Date",
+      "accessPath": "modifiedDate",
+      "dataType": "LocalDateTime",
+      "bodyType": "text",
+      "displayable": false
+    }
+  ]
+}

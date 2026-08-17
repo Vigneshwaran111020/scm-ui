@@ -1,0 +1,18 @@
+{
+  "tableId": "uoms",
+  "titleProps": [
+    { "title": "", "accessPath": "id", "dataType": "Long", "bodyType": "select", "displayable": true },
+    { "title": "UOM Code", "accessPath": "uomCode", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "UOM Name", "accessPath": "uomName", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Symbol", "accessPath": "symbol", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "UOM Type", "accessPath": "uomType", "dataType": "UomType", "bodyType": "text", "displayable": true },
+    { "title": "Base UOM", "accessPath": "baseUom", "dataType": "boolean", "bodyType": "text", "displayable": true },
+    { "title": "Conversion Factor", "accessPath": "conversionFactor", "dataType": "Double", "bodyType": "text", "displayable": true },
+    { "title": "Status", "accessPath": "status", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Remarks", "accessPath": "remarks", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Created By", "accessPath": "createdBy", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Created Date", "accessPath": "createdDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": false },
+    { "title": "Modified By", "accessPath": "modifiedBy", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Modified Date", "accessPath": "modifiedDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": false }
+  ]
+}

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import CustomReadOnlyContainer from '../components/CustomReadOnlyContainer';
 import { apiFetch } from '../services/api';
 
-export default function ViewPage({ title, data, endpoint }) {
+export default function ViewPage({ title, data, endpoint, fields }) {
   if (!data) return <div>No data provided.</div>;
   
   const [viewData, setViewData] = useState(() => {
@@ -42,15 +42,19 @@ export default function ViewPage({ title, data, endpoint }) {
     <div>
       <h2 className="page-title">{title} (View)</h2>
       <div className="enterprise-card">
-        {keys.map((key) => {
+        {(fields && fields.length > 0 ? fields : keys).map((fieldItem) => {
+          const isObject = typeof fieldItem === 'object';
+          const key = isObject ? fieldItem.name : fieldItem;
+          const fieldConfig = isObject ? fieldItem : { name: key };
+          
           const label = key.replace(/([A-Z])/g, ' $1');
-          const finalLabel = label.charAt(0).toUpperCase() + label.slice(1);
+          const finalLabel = fieldConfig.label || (label.charAt(0).toUpperCase() + label.slice(1));
+          
           return (
             <CustomReadOnlyContainer 
               key={key} 
               label={finalLabel} 
               value={viewData[key]} 
-
             />
           );
         })}

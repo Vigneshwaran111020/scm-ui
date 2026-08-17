@@ -1,0 +1,14 @@
+{
+  "tableId": "binTransfers",
+  "titleProps": [
+    { "title": "Transfer ID", "accessPath": "id", "dataType": "Long", "bodyType": "number", "displayable": true },
+    { "title": "SKU", "accessPath": "skuId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Source WH", "accessPath": "sourceWarehouseId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Source Bin", "accessPath": "sourceBinId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Dest Bin", "accessPath": "destinationBinId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Quantity", "accessPath": "quantity", "dataType": "BigDecimal", "bodyType": "number", "displayable": true },
+    { "title": "UOM", "accessPath": "uomId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Reason", "accessPath": "reasonCode", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Transfer Date", "accessPath": "transferDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": true }
+  ]
+}

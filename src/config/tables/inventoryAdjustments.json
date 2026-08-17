@@ -1,0 +1,15 @@
+{
+  "tableId": "inventoryAdjustments",
+  "titleProps": [
+    { "title": "Adjustment ID", "accessPath": "id", "dataType": "Long", "bodyType": "number", "displayable": true },
+    { "title": "Warehouse", "accessPath": "warehouseId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Bin", "accessPath": "binId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "SKU", "accessPath": "skuId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Adjustment Type", "accessPath": "adjustmentType", "dataType": "String", "bodyType": "status", "displayable": true },
+    { "title": "Quantity", "accessPath": "quantity", "dataType": "BigDecimal", "bodyType": "number", "displayable": true },
+    { "title": "UOM", "accessPath": "uomId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Reason Code", "accessPath": "reasonCode", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Reference", "accessPath": "referenceNumber", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Adjustment Date", "accessPath": "adjustmentDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": true }
+  ]
+}

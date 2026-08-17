@@ -1,0 +1,20 @@
+{
+  "tableId": "racks",
+  "titleProps": [
+    { "title": "", "accessPath": "id", "dataType": "Long", "bodyType": "select", "displayable": true },
+    { "title": "Warehouse", "accessPath": "warehouseId", "dataType": "Long", "bodyType": "text", "displayable": false },
+    { "title": "Zone", "accessPath": "zoneId", "dataType": "Long", "bodyType": "text", "displayable": false },
+    { "title": "Aisle", "accessPath": "aisleId", "dataType": "Long", "bodyType": "text", "displayable": true },
+    { "title": "Rack Code", "accessPath": "rackCode", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Rack Name", "accessPath": "rackName", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Rack Type", "accessPath": "rackType", "dataType": "RackType", "bodyType": "text", "displayable": true },
+    { "title": "Levels", "accessPath": "levels", "dataType": "Integer", "bodyType": "text", "displayable": true },
+    { "title": "Max Weight", "accessPath": "maxWeight", "dataType": "Double", "bodyType": "text", "displayable": true },
+    { "title": "Status", "accessPath": "status", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Remarks", "accessPath": "remarks", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Created By", "accessPath": "createdBy", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Created Date", "accessPath": "createdDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": false },
+    { "title": "Modified By", "accessPath": "modifiedBy", "dataType": "String", "bodyType": "text", "displayable": false },
+    { "title": "Modified Date", "accessPath": "modifiedDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": false }
+  ]
+}

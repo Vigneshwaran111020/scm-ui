@@ -5,7 +5,8 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '';
  * @param {Object} options - Fetch options (method, headers, body, etc.)
  */
 export const apiFetch = async (endpoint, options = {}) => {
-  const url = `${API_BASE_URL}${endpoint}`;
+  const contextPath = '/scm';
+  const url = `${API_BASE_URL}${contextPath}${endpoint}`;
 
   const defaultHeaders = {
     'Content-Type': 'application/json',

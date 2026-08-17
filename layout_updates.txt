@@ -1,0 +1,158 @@
+import Zones from '../pages/Zones';
+import Aisles from '../pages/Aisles';
+import Racks from '../pages/Racks';
+import Bins from '../pages/Bins';
+import Categories from '../pages/Categories';
+import Uoms from '../pages/Uoms';
+import Products from '../pages/Products';
+import Skus from '../pages/Skus';
+
+      case 'ZONES_LIST': return <Zones tabId={tab.id} />;
+      case 'AISLES_LIST': return <Aisles tabId={tab.id} />;
+      case 'RACKS_LIST': return <Racks tabId={tab.id} />;
+      case 'BINS_LIST': return <Bins tabId={tab.id} />;
+      case 'CATEGORIES_LIST': return <Categories tabId={tab.id} />;
+      case 'UOMS_LIST': return <Uoms tabId={tab.id} />;
+      case 'PRODUCTS_LIST': return <Products tabId={tab.id} />;
+      case 'SKUS_LIST': return <Skus tabId={tab.id} />;
+
+
+    if (segments[0] === 'wms' && segments[1] === 'zones') {
+      const zoneFields = [
+        { name: 'warehouseId', label: 'Warehouse', type: 'dropdown', endpoint: '/api/warehouses', labelKey: 'warehouseName', valueKey: 'id', required: true },
+        { name: 'zoneCode', label: 'Zone Code', required: true },
+        { name: 'zoneName', label: 'Zone Name', required: true },
+        { name: 'zoneType', label: 'Zone Type', type: 'dropdown', options: ['RECEIVING', 'STORAGE', 'PICKING', 'PACKING', 'DISPATCH', 'RETURNS', 'DAMAGED'] },
+        { name: 'temperatureType', label: 'Temperature Type', type: 'dropdown', options: ['AMBIENT', 'DRY', 'REFRIGERATED', 'FROZEN', 'CONTROLLED'] },
+        { name: 'sequence', label: 'Sequence', type: 'number' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'zones-list', type: 'ZONES_LIST', title: 'Zones', url: pathname, endpoint: '/api/zones' };
+      if (segments[2] === 'add') return { id: 'add-zone', type: 'ADD', title: 'Add Zone', url: pathname, params: { fields: zoneFields, parentTabId: 'zones-list', parentUrl: '/wms/zones/viewAll' }, endpoint: '/api/zones' };
+      if (segments[3] === 'edit') return { id: 'zone-edit-' + segments[2], type: 'EDIT', title: 'Edit Zone ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/zones/viewAll', fields: zoneFields }, endpoint: '/api/zones' };
+      if (segments[3] === 'view') return { id: 'zone-view-' + segments[2], type: 'VIEW', title: 'View Zone ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/zones/viewAll', fields: zoneFields }, endpoint: '/api/zones' };
+    }
+    if (segments[0] === 'wms' && segments[1] === 'aisles') {
+      const aisleFields = [
+        { name: 'warehouseId', label: 'Warehouse', type: 'dropdown', endpoint: '/api/warehouses', labelKey: 'warehouseName', valueKey: 'id', required: true },
+        { name: 'zoneId', label: 'Zone', type: 'dropdown', endpoint: '/api/zones', cascadeFrom: 'warehouseId', labelKey: 'zoneName', valueKey: 'id', required: true },
+        { name: 'aisleCode', label: 'Aisle Code', required: true },
+        { name: 'aisleName', label: 'Aisle Name', required: true },
+        { name: 'sequence', label: 'Sequence', type: 'number' },
+        { name: 'length', label: 'Length', type: 'number' },
+        { name: 'width', label: 'Width', type: 'number' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'aisles-list', type: 'AISLES_LIST', title: 'Aisles', url: pathname, endpoint: '/api/aisles' };
+      if (segments[2] === 'add') return { id: 'add-aisle', type: 'ADD', title: 'Add Aisle', url: pathname, params: { fields: aisleFields, parentTabId: 'aisles-list', parentUrl: '/wms/aisles/viewAll' }, endpoint: '/api/aisles' };
+      if (segments[3] === 'edit') return { id: 'aisle-edit-' + segments[2], type: 'EDIT', title: 'Edit Aisle ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/aisles/viewAll', fields: aisleFields }, endpoint: '/api/aisles' };
+      if (segments[3] === 'view') return { id: 'aisle-view-' + segments[2], type: 'VIEW', title: 'View Aisle ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/aisles/viewAll', fields: aisleFields }, endpoint: '/api/aisles' };
+    }
+    if (segments[0] === 'wms' && segments[1] === 'racks') {
+      const rackFields = [
+        { name: 'warehouseId', label: 'Warehouse', type: 'dropdown', endpoint: '/api/warehouses', labelKey: 'warehouseName', valueKey: 'id', required: true },
+        { name: 'zoneId', label: 'Zone', type: 'dropdown', endpoint: '/api/zones', cascadeFrom: 'warehouseId', labelKey: 'zoneName', valueKey: 'id', required: true },
+        { name: 'aisleId', label: 'Aisle', type: 'dropdown', endpoint: '/api/aisles', cascadeFrom: 'zoneId', labelKey: 'aisleName', valueKey: 'id', required: true },
+        { name: 'rackCode', label: 'Rack Code', required: true },
+        { name: 'rackName', label: 'Rack Name', required: true },
+        { name: 'rackType', label: 'Rack Type', type: 'dropdown', options: ['STANDARD', 'DRIVE_IN', 'PUSH_BACK', 'PALLET_FLOW', 'CANTILEVER', 'MEZZANINE'] },
+        { name: 'levels', label: 'Levels', type: 'number' },
+        { name: 'maxWeight', label: 'Max Weight', type: 'number' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'racks-list', type: 'RACKS_LIST', title: 'Racks', url: pathname, endpoint: '/api/racks' };
+      if (segments[2] === 'add') return { id: 'add-rack', type: 'ADD', title: 'Add Rack', url: pathname, params: { fields: rackFields, parentTabId: 'racks-list', parentUrl: '/wms/racks/viewAll' }, endpoint: '/api/racks' };
+      if (segments[3] === 'edit') return { id: 'rack-edit-' + segments[2], type: 'EDIT', title: 'Edit Rack ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/racks/viewAll', fields: rackFields }, endpoint: '/api/racks' };
+      if (segments[3] === 'view') return { id: 'rack-view-' + segments[2], type: 'VIEW', title: 'View Rack ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/racks/viewAll', fields: rackFields }, endpoint: '/api/racks' };
+    }
+    if (segments[0] === 'wms' && segments[1] === 'bins') {
+      const binFields = [
+        { name: 'warehouseId', label: 'Warehouse', type: 'dropdown', endpoint: '/api/warehouses', labelKey: 'warehouseName', valueKey: 'id', required: true },
+        { name: 'zoneId', label: 'Zone', type: 'dropdown', endpoint: '/api/zones', cascadeFrom: 'warehouseId', labelKey: 'zoneName', valueKey: 'id', required: true },
+        { name: 'aisleId', label: 'Aisle', type: 'dropdown', endpoint: '/api/aisles', cascadeFrom: 'zoneId', labelKey: 'aisleName', valueKey: 'id', required: true },
+        { name: 'rackId', label: 'Rack', type: 'dropdown', endpoint: '/api/racks', cascadeFrom: 'aisleId', labelKey: 'rackName', valueKey: 'id', required: true },
+        { name: 'binCode', label: 'Bin Code', required: true },
+        { name: 'binType', label: 'Bin Type', type: 'dropdown', options: ['STANDARD', 'PICKING', 'RESERVE', 'REPLENISHMENT', 'BULK'] },
+        { name: 'capacity', label: 'Capacity', type: 'number' },
+        { name: 'capacityUom', label: 'Capacity UOM' },
+        { name: 'maxWeight', label: 'Max Weight', type: 'number' },
+        { name: 'occupied', label: 'Occupied', type: 'checkbox' },
+        { name: 'allowMixedSku', label: 'Allow Mixed SKU', type: 'checkbox' },
+        { name: 'allowMixedLot', label: 'Allow Mixed Lot', type: 'checkbox' },
+        { name: 'barcode', label: 'Barcode' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'bins-list', type: 'BINS_LIST', title: 'Bins', url: pathname, endpoint: '/api/bins' };
+      if (segments[2] === 'add') return { id: 'add-bin', type: 'ADD', title: 'Add Bin', url: pathname, params: { fields: binFields, parentTabId: 'bins-list', parentUrl: '/wms/bins/viewAll' }, endpoint: '/api/bins' };
+      if (segments[3] === 'edit') return { id: 'bin-edit-' + segments[2], type: 'EDIT', title: 'Edit Bin ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/bins/viewAll', fields: binFields }, endpoint: '/api/bins' };
+      if (segments[3] === 'view') return { id: 'bin-view-' + segments[2], type: 'VIEW', title: 'View Bin ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/bins/viewAll', fields: binFields }, endpoint: '/api/bins' };
+    }
+    if (segments[0] === 'wms' && segments[1] === 'categories') {
+      const categoryFields = [
+        { name: 'categoryCode', label: 'Category Code', required: true },
+        { name: 'categoryName', label: 'Category Name', required: true },
+        { name: 'parentCategoryId', label: 'Parent Category', type: 'dropdown', endpoint: '/api/categories', labelKey: 'categoryName', valueKey: 'id' },
+        { name: 'description', label: 'Description', type: 'textarea' },
+        { name: 'displaySequence', label: 'Display Sequence', type: 'number' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'categories-list', type: 'CATEGORIES_LIST', title: 'Categorys', url: pathname, endpoint: '/api/categories' };
+      if (segments[2] === 'add') return { id: 'add-category', type: 'ADD', title: 'Add Category', url: pathname, params: { fields: categoryFields, parentTabId: 'categories-list', parentUrl: '/wms/categories/viewAll' }, endpoint: '/api/categories' };
+      if (segments[3] === 'edit') return { id: 'category-edit-' + segments[2], type: 'EDIT', title: 'Edit Category ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/categories/viewAll', fields: categoryFields }, endpoint: '/api/categories' };
+      if (segments[3] === 'view') return { id: 'category-view-' + segments[2], type: 'VIEW', title: 'View Category ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/categories/viewAll', fields: categoryFields }, endpoint: '/api/categories' };
+    }
+    if (segments[0] === 'wms' && segments[1] === 'uoms') {
+      const uomFields = [
+        { name: 'uomCode', label: 'UOM Code', required: true },
+        { name: 'uomName', label: 'UOM Name', required: true },
+        { name: 'symbol', label: 'Symbol' },
+        { name: 'uomType', label: 'UOM Type', type: 'dropdown', options: ['QUANTITY', 'WEIGHT', 'VOLUME', 'LENGTH', 'AREA', 'TIME'] },
+        { name: 'baseUom', label: 'Base UOM', type: 'checkbox' },
+        { name: 'conversionFactor', label: 'Conversion Factor', type: 'number' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'uoms-list', type: 'UOMS_LIST', title: 'Unit Of Measures', url: pathname, endpoint: '/api/uoms' };
+      if (segments[2] === 'add') return { id: 'add-uom', type: 'ADD', title: 'Add Unit Of Measure', url: pathname, params: { fields: uomFields, parentTabId: 'uoms-list', parentUrl: '/wms/uoms/viewAll' }, endpoint: '/api/uoms' };
+      if (segments[3] === 'edit') return { id: 'uom-edit-' + segments[2], type: 'EDIT', title: 'Edit Unit Of Measure ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/uoms/viewAll', fields: uomFields }, endpoint: '/api/uoms' };
+      if (segments[3] === 'view') return { id: 'uom-view-' + segments[2], type: 'VIEW', title: 'View Unit Of Measure ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/uoms/viewAll', fields: uomFields }, endpoint: '/api/uoms' };
+    }
+    if (segments[0] === 'wms' && segments[1] === 'products') {
+      const productFields = [
+        { name: 'productCode', label: 'Product Code', required: true },
+        { name: 'productName', label: 'Product Name', required: true },
+        { name: 'shortDescription', label: 'Short Description' },
+        { name: 'longDescription', label: 'Long Description', type: 'textarea' },
+        { name: 'categoryId', label: 'Category', type: 'dropdown', endpoint: '/api/categories', labelKey: 'categoryName', valueKey: 'id' },
+        { name: 'uomId', label: 'UOM', type: 'dropdown', endpoint: '/api/uoms', labelKey: 'uomName', valueKey: 'id' },
+        { name: 'barcode', label: 'Barcode' },
+        { name: 'manufacturer', label: 'Manufacturer' },
+        { name: 'brand', label: 'Brand' },
+        { name: 'countryOfOrigin', label: 'Country Of Origin' },
+        { name: 'weight', label: 'Weight', type: 'number' },
+        { name: 'length', label: 'Length', type: 'number' },
+        { name: 'width', label: 'Width', type: 'number' },
+        { name: 'height', label: 'Height', type: 'number' },
+        { name: 'volume', label: 'Volume', type: 'number' },
+        { name: 'shelfLifeDays', label: 'Shelf Life (Days)', type: 'number' },
+        { name: 'expiryRequired', label: 'Expiry Required', type: 'checkbox' },
+        { name: 'serialTracking', label: 'Serial Tracking', type: 'checkbox' },
+        { name: 'lotTracking', label: 'Lot Tracking', type: 'checkbox' },
+        { name: 'hazardous', label: 'Hazardous', type: 'checkbox' },
+        { name: 'temperatureType', label: 'Temperature Type', type: 'dropdown', options: ['AMBIENT', 'DRY', 'REFRIGERATED', 'FROZEN', 'CONTROLLED'] },
+        { name: 'imageUrl', label: 'Image URL' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'products-list', type: 'PRODUCTS_LIST', title: 'Products', url: pathname, endpoint: '/api/products' };
+      if (segments[2] === 'add') return { id: 'add-product', type: 'ADD', title: 'Add Product', url: pathname, params: { fields: productFields, parentTabId: 'products-list', parentUrl: '/wms/products/viewAll' }, endpoint: '/api/products' };
+      if (segments[3] === 'edit') return { id: 'product-edit-' + segments[2], type: 'EDIT', title: 'Edit Product ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/products/viewAll', fields: productFields }, endpoint: '/api/products' };
+      if (segments[3] === 'view') return { id: 'product-view-' + segments[2], type: 'VIEW', title: 'View Product ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/products/viewAll', fields: productFields }, endpoint: '/api/products' };
+    }
+    if (segments[0] === 'wms' && segments[1] === 'skus') {
+      const skuFields = [
+        { name: 'productId', label: 'Product', type: 'dropdown', endpoint: '/api/products', labelKey: 'productName', valueKey: 'id', required: true },
+        { name: 'skuCode', label: 'SKU Code', required: true },
+        { name: 'upc', label: 'UPC' },
+        { name: 'ean', label: 'EAN' },
+        { name: 'packType', label: 'Pack Type', type: 'dropdown', options: ['EACH', 'INNER_PACK', 'CASE', 'MASTER_CASE', 'PALLET', 'CARTON'] },
+        { name: 'color', label: 'Color' },
+        { name: 'size', label: 'Size' },
+        { name: 'weight', label: 'Weight', type: 'number' }
+      ];
+      if (segments[2] === 'viewAll') return { id: 'skus-list', type: 'SKUS_LIST', title: 'SKUs', url: pathname, endpoint: '/api/skus' };
+      if (segments[2] === 'add') return { id: 'add-sku', type: 'ADD', title: 'Add SKU', url: pathname, params: { fields: skuFields, parentTabId: 'skus-list', parentUrl: '/wms/skus/viewAll' }, endpoint: '/api/skus' };
+      if (segments[3] === 'edit') return { id: 'sku-edit-' + segments[2], type: 'EDIT', title: 'Edit SKU ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/skus/viewAll', fields: skuFields }, endpoint: '/api/skus' };
+      if (segments[3] === 'view') return { id: 'sku-view-' + segments[2], type: 'VIEW', title: 'View SKU ' + segments[2], url: pathname, params: { id: segments[2], parentUrl: '/wms/skus/viewAll', fields: skuFields }, endpoint: '/api/skus' };
+    }

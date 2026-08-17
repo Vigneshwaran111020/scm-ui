@@ -1,0 +1,16 @@
+{
+  "tableId": "inventoryTransactions",
+  "titleProps": [
+    { "title": "Transaction ID", "accessPath": "id", "dataType": "Long", "bodyType": "number", "displayable": true },
+    { "title": "Transaction Type", "accessPath": "transactionType", "dataType": "String", "bodyType": "status", "displayable": true },
+    { "title": "Inventory ID", "accessPath": "inventoryId", "dataType": "Long", "bodyType": "number", "displayable": true },
+    { "title": "Warehouse", "accessPath": "warehouseId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "SKU", "accessPath": "skuId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "From Bin", "accessPath": "fromBinId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "To Bin", "accessPath": "toBinId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Quantity", "accessPath": "quantity", "dataType": "BigDecimal", "bodyType": "number", "displayable": true },
+    { "title": "Reference Type", "accessPath": "referenceType", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Reference ID", "accessPath": "referenceId", "dataType": "String", "bodyType": "text", "displayable": true },
+    { "title": "Transaction Date", "accessPath": "transactionDate", "dataType": "LocalDateTime", "bodyType": "text", "displayable": true }
+  ]
+}

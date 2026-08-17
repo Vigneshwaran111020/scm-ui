@@ -1,0 +1,39 @@
+{
+  "tableId": "drivers",
+  "titleProps": [
+    {
+      "title": "",
+      "accessPath": "id",
+      "bodyType": "select",
+      "displayable": true
+    },
+    {
+      "title": "Driver Number",
+      "accessPath": "driverNumber",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Driver Name",
+      "accessPath": "driverName",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "License Number",
+      "accessPath": "licenseNumber",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    },
+    {
+      "title": "Phone Number",
+      "accessPath": "phoneNumber",
+      "dataType": "String",
+      "bodyType": "text",
+      "displayable": true
+    }
+  ]
+}

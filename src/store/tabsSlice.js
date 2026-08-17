@@ -43,6 +43,11 @@ const tabsSlice = createSlice({
     setActiveTab: (state, action) => {
       state.activeTabId = action.payload;
     },
+    closeAllTabs: (state) => {
+      state.openTabs = [];
+      state.activeTabId = null;
+      state.pageState = {}; // Clear all cached page states
+    },
     updatePageState: (state, action) => {
       const { tabId, data } = action.payload;
       if (!state.pageState[tabId]) {
@@ -53,5 +58,5 @@ const tabsSlice = createSlice({
   }
 });
 
-export const { openTab, closeTab, setActiveTab, updatePageState } = tabsSlice.actions;
+export const { openTab, closeTab, setActiveTab, closeAllTabs, updatePageState } = tabsSlice.actions;
 export default tabsSlice.reducer;

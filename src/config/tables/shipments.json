@@ -1,0 +1,9 @@
+{
+  "tableId": "shipments",
+  "titleProps": [
+    { "title": "Shipment Number", "accessPath": "shipmentNumber", "dataType": "String", "bodyType": "text" },
+    { "title": "Customer Name", "accessPath": "customerName", "dataType": "String", "bodyType": "text" },
+    { "title": "Origin", "accessPath": "origin", "dataType": "String", "bodyType": "text" },
+    { "title": "Destination", "accessPath": "destination", "dataType": "String", "bodyType": "text" }
+  ]
+}

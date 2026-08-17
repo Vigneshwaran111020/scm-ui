@@ -1,19 +1,24 @@
-import { useState, useEffect } from 'react';
-import CustomInputContainer from '../components/CustomInputContainer';
+import { useState, useEffect, useRef } from 'react';
+import CustomInputWrapper from '../components/CustomInputWrapper';
 import { Save } from 'lucide-react';
 import { apiFetch } from '../services/api';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updatePageState } from '../store/tabsSlice';
 import { toast } from 'react-toastify';
 
-export default function EditPage({ title, data, endpoint, parentUrl, tabId }) {
+export default function EditPage({ title, data, endpoint, parentUrl, tabId, fields }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const formRef = useRef(null);
 
   if (!data) return <div>No data provided.</div>;
 
+  const pageState = useSelector(state => state.tabs.pageState[tabId]) || {};
+
   const [formData, setFormData] = useState(() => {
+    if (pageState.formData) return pageState.formData;
+    
     const initData = { ...data };
     delete initData.parentUrl;
     return initData;
@@ -26,7 +31,7 @@ export default function EditPage({ title, data, endpoint, parentUrl, tabId }) {
   useEffect(() => {
     // If deep linked, `data` might only contain routing metadata `{ id, parentUrl }`
     const hasBusinessData = Object.keys(data).some(k => !['id', 'parentUrl', 'tabId'].includes(k));
-    if (!hasBusinessData && data.id) {
+    if (!hasBusinessData && data.id && !pageState.formData) {
       setIsLoading(true);
       apiFetch(endpoint)
         .then(res => {
@@ -47,16 +52,60 @@ export default function EditPage({ title, data, endpoint, parentUrl, tabId }) {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    setFormData(prev => {
+      const nextData = { ...prev, [name]: value };
+      
+      const clearCascades = (parentName, currentData) => {
+        if (!fields) return;
+        fields.forEach(f => {
+          const fConfig = typeof f === 'object' ? f : null;
+          if (fConfig && fConfig.cascadeFrom === parentName) {
+            currentData[fConfig.name] = '';
+            clearCascades(fConfig.name, currentData);
+          }
+        });
+      };
+      
+      clearCascades(name, nextData);
+      
+      dispatch(updatePageState({ tabId, data: { formData: nextData } }));
+      return nextData;
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSaving(true);
+
+    if (formRef.current && !formRef.current.validateForm()) {
+      setIsSaving(false);
+      return;
+    }
+
+    const payload = { ...formData };
+    
+    // Format payload to ensure proper data types
+    const currentFields = fields && fields.length > 0 ? fields : keys;
+    currentFields.forEach(f => {
+      const fConfig = typeof f === 'object' ? f : { name: f };
+      const key = fConfig.name;
+      const val = payload[key];
+      
+      if (val === '' || val === undefined) {
+        // Send null instead of empty string for empty optional fields
+        payload[key] = null;
+      } else if (fConfig.type === 'number') {
+        payload[key] = Number(val);
+      } else if (fConfig.type === 'checkbox') {
+        payload[key] = Boolean(val);
+      }
+    });
+
     try {
       const response = await apiFetch(`${endpoint}/${data.id || ''}`, {
         method: 'PUT',
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
       if (response && response.success) {
         toast.success(response.data || 'Record updated successfully!');
@@ -96,22 +145,15 @@ export default function EditPage({ title, data, endpoint, parentUrl, tabId }) {
 
   return (
     <div>
-      <h2 className="page-title">{title} (Edit)</h2>
+      <h2 className="page-title">{title}</h2>
       <div className="enterprise-card">
         <form onSubmit={handleSubmit}>
-          {keys.map((key) => {
-            const placeholder = key.replace(/([A-Z])/g, ' $1');
-            const finalPlaceholder = placeholder.charAt(0).toUpperCase() + placeholder.slice(1);
-            return (
-              <CustomInputContainer
-                key={key}
-                name={key}
-                value={formData[key] || ''}
-                onChange={handleInputChange}
-                placeholder={finalPlaceholder}
-              />
-            );
-          })}
+          <CustomInputWrapper
+            ref={formRef}
+            model={fields && fields.length > 0 ? fields : keys}
+            value={formData}
+            onChange={handleInputChange}
+          />
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem' }}>
             <button type="submit" className="btn-primary" disabled={isSaving}>
